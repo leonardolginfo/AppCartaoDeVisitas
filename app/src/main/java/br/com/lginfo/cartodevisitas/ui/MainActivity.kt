@@ -1,17 +1,23 @@
 package br.com.lginfo.cartodevisitas.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.lginfo.cartodevisitas.R
 import br.com.lginfo.cartodevisitas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private val bindig by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(bindig.root)
-                    }
+        setContentView(binding.root)
+        insertListeners()
+          }
 
+    private fun insertListeners() = binding.btnAdd.setOnClickListener {
+        val intent = Intent(this@MainActivity, AddCartao::class.java)
+        startActivity(intent)
+    }
 
 }
