@@ -27,6 +27,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_title"
         android:layout_margin="16dp"
         tools:itemCount="8"
+        tools:listitem="@layout/itens_cartao_visita"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
